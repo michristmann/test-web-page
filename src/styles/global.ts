@@ -36,7 +36,7 @@ export default createGlobalStyle`
 
   p {
     font: ${props => props.theme.fonts.p26};
-    color: ${props => props.theme.colors.blackText}
+    color: ${props => props.theme.colors.secondaryText}
   }
 
   button, a {
