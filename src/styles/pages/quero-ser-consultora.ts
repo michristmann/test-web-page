@@ -68,7 +68,7 @@ export const FormArea = styled.div`
   background-color: ${props => props.theme.colors.secondaryBackground};
 `
 
-export const Form = styled.div`
+export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -84,6 +84,8 @@ export const FormHeader = styled.div`
   padding-top: 0;
 
   > h2 {
+    width: 90%;
+
     text-transform: uppercase;
 
     margin-bottom: 2.8rem;
@@ -94,7 +96,53 @@ export const FormHeader = styled.div`
   }
 `
 
-export const InputArea = styled.div``
+export const InputArea = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  margin: 2.8rem 0;
+
+  text-align: center;
+
+  p {
+    font: ${props => props.theme.fonts.p16};
+    font-size: 1.2rem;
+
+    text-align: start;
+
+    padding: 1.6rem 0;
+  }
+`
+
+export const FormButton = styled.button`
+  width: 12rem;
+
+  margin: 1.6rem 0;
+
+  background: ${props => props.theme.colors.primaryBackground};
+  border: 0.2rem solid ${props => props.theme.colors.primary};
+
+  transition: background-color 1ms linear, color 1ms linear;
+
+  p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: ${props => props.theme.colors.primary};
+
+    padding: 0.8rem 1.2rem;
+  }
+
+  &:hover {
+    background: ${props => props.theme.colors.primary};
+
+    p {
+      color: ${props => props.theme.colors.tertiary};
+    }
+  }
+`
 
 export const FormFooter = styled.div`
   text-align: center;
@@ -131,7 +179,7 @@ export const AdvertHeader = styled.div`
 
   > p {
     font: ${props => props.theme.fonts.p16};
-    color: ${props => props.theme.colors.primaryText};
+    color: ${props => props.theme.colors.primary};
 
     line-height: 2.8rem;
   }
@@ -169,7 +217,7 @@ export const AdvertContentText = styled.div`
   right: 0;
 
   background: ${props => props.theme.colors.tertiaryBackground};
-  color: ${props => props.theme.colors.tertiaryText};
+  color: ${props => props.theme.colors.tertiary};
 
   > h2 {
     text-transform: uppercase;
@@ -179,7 +227,7 @@ export const AdvertContentText = styled.div`
 
   > p {
     font: ${props => props.theme.fonts.p16};
-    color: ${props => props.theme.colors.tertiaryText};
+    color: ${props => props.theme.colors.tertiary};
 
     margin-bottom: 1.4rem;
   }
@@ -207,7 +255,7 @@ export const AdvertFooter = styled.div`
 
   > p {
     font: ${props => props.theme.fonts.p16};
-    color: ${props => props.theme.colors.primaryText};
+    color: ${props => props.theme.colors.primary};
 
     line-height: 2.8rem;
   }

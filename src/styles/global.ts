@@ -14,7 +14,7 @@ export default createGlobalStyle`
 
   body {
     background: ${props => props.theme.colors.primaryBackground};
-    color: ${props => props.theme.colors.primaryText};
+    color: ${props => props.theme.colors.primary};
     -webkit-font-smoothing: antialiased;
   }
 
@@ -36,7 +36,7 @@ export default createGlobalStyle`
 
   p {
     font: ${props => props.theme.fonts.p26};
-    color: ${props => props.theme.colors.secondaryText}
+    color: ${props => props.theme.colors.secondary}
   }
 
   button, a {

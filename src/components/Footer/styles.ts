@@ -15,7 +15,7 @@ export const MediaLinks = styled.div`
   align-items: center;
   justify-content: center;
 
-  border-top: 0.1rem solid ${props => props.theme.colors.primaryColor};
+  border-top: 0.1rem solid ${props => props.theme.colors.primary};
 
   > svg {
     width: 3.2rem;
@@ -43,7 +43,7 @@ export const CompanyLinks = styled.div`
     text-decoration: none;
     text-transform: uppercase;
 
-    color: ${props => props.theme.colors.primaryText};
+    color: ${props => props.theme.colors.primary};
     margin-bottom: 0.4rem;
   }
 `
@@ -81,12 +81,12 @@ export const CompanyInfo = styled.div`
 
     span {
       font: ${props => props.theme.fonts.p16};
-      color: ${props => props.theme.colors.secondaryText};
+      color: ${props => props.theme.colors.secondary};
     }
 
     > a {
       font: ${props => props.theme.fonts.p16};
-      color: ${props => props.theme.colors.primaryText};
+      color: ${props => props.theme.colors.primary};
     }
   }
 

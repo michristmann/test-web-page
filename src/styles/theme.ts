@@ -3,12 +3,11 @@ const theme = {
     primaryBackground: '#FFF',
     secondaryBackground: '#FDF6ED',
     tertiaryBackground: '#AF945E',
-    alertBackgraound: '#cc3b3b',
-    primaryText: '#af945e',
-    secondaryText: '#000',
-    tertiaryText: '#FFF',
-    alertText: '#bd0000',
-    primaryColor: '#af945e'
+    alertBackground: '#cc3b3b',
+    primary: '#af945e',
+    secondary: '#000',
+    tertiary: '#FFF',
+    alertText: '#bd0000'
   },
 
   fonts: {

@@ -41,7 +41,7 @@ export const PagesLinksWrapper = styled.div`
     text-decoration: none;
     text-transform: uppercase;
 
-    color: ${props => props.theme.colors.primaryText};
+    color: ${props => props.theme.colors.primary};
     margin-left: 2rem;
   }
 `
@@ -52,7 +52,7 @@ export const RestrictedAreaButton = styled.button`
   margin-left: 4rem;
 
   background: transparent;
-  border: 0.2rem solid ${props => props.theme.colors.primaryColor};
+  border: 0.2rem solid ${props => props.theme.colors.primary};
 
   transition: background-color 1ms linear, color 1ms linear;
 
@@ -61,16 +61,16 @@ export const RestrictedAreaButton = styled.button`
     font-weight: 500;
     text-transform: uppercase;
 
-    color: ${props => props.theme.colors.primaryColor};
+    color: ${props => props.theme.colors.primary};
 
     padding: 0.8rem 1.2rem;
   }
 
   &:hover {
-    background: ${props => props.theme.colors.primaryColor};
+    background: ${props => props.theme.colors.primary};
 
     p {
-      color: ${props => props.theme.colors.tertiaryText};
+      color: ${props => props.theme.colors.tertiary};
     }
   }
 `

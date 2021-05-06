@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useRef, useCallback, useState } from 'react'
 import Head from 'next/head'
+import { Form } from '@unform/web'
+import { FormHandles } from '@unform/core'
+import * as Yup from 'yup'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Input from '../components/Input'
+import getFormErrors from '../utils/getFormErrors'
 import {
   Container,
   PageIntro,
   Prerequisites,
   Requisite,
   FormArea,
-  Form,
+  FormWrapper,
   FormHeader,
   InputArea,
+  FormButton,
   FormFooter,
   Advertising,
   AdvertHeader,
@@ -28,7 +34,51 @@ import document from '../assets/quero-ser-consultora/document.png'
 import thumbsUp from '../assets/quero-ser-consultora/like.png'
 import femaleModel from '../assets/quero-ser-consultora/femaleModel.png'
 
+interface RegisterFormData {
+  name: string
+  email: string
+  phoneNumber: string
+}
+
 const wantToBeConsultant: React.FC = () => {
+  const formRef = useRef<FormHandles>(null)
+
+  const maskPhone = (value: string) => {
+    return value
+      .replace(/\D/g, '')
+      .replace(/(\d{2})(\d)/, '($1) $2')
+      .replace(/(\d{5})(\d{4})(\d)/, '$1-$2')
+  }
+
+  const [phoneNumber, setPhoneNumber] = useState('')
+
+  const handleSubmit = useCallback(async (data: RegisterFormData) => {
+    try {
+      formRef.current?.setErrors({})
+
+      const schema = Yup.object().shape({
+        name: Yup.string().required('Nome Obrigatório'),
+        email: Yup.string()
+          .required('E-mail obrigatório')
+          .email('Digite um endereço de e-mail válido'),
+        phoneNumber: Yup.string().min(
+          11,
+          'Informe um número válido de telefone'
+        )
+      })
+
+      await schema.validate(data, { abortEarly: false })
+    } catch (error) {
+      if (error instanceof Yup.ValidationError) {
+        const errors = getFormErrors(error)
+
+        formRef.current?.setErrors(errors)
+
+        return
+      }
+    }
+  }, [])
+
   return (
     <Container>
       <Head>
@@ -69,7 +119,7 @@ const wantToBeConsultant: React.FC = () => {
       </PageIntro>
 
       <FormArea>
-        <Form>
+        <FormWrapper>
           <FormHeader>
             <h2>Nos conte um pouco sobre você</h2>
             <p>
@@ -78,14 +128,30 @@ const wantToBeConsultant: React.FC = () => {
               contato.
             </p>
           </FormHeader>
-          <InputArea></InputArea>
+          <InputArea>
+            <Form ref={formRef} onSubmit={handleSubmit}>
+              <Input name="name" type="name" placeholder="Nome *" />
+              <Input name="email" type="email" placeholder="E-mail *" />
+              <Input
+                value={phoneNumber}
+                onChange={e => setPhoneNumber(maskPhone(e.target.value))}
+                name="phoneNumber"
+                type="phoneNumber"
+                placeholder="Celular (WhatsApp) *"
+              />
+              <p>* Campo obrigatório</p>
+              <FormButton type="submit">
+                <p>Enviar</p>
+              </FormButton>
+            </Form>
+          </InputArea>
           <FormFooter>
             <p>O cadastro não pode ser feito em nome de terceiros.</p>
             <p>
               Após a aprovação, você terá acesso ao kit de jóias e informações.
             </p>
           </FormFooter>
-        </Form>
+        </FormWrapper>
       </FormArea>
 
       <Advertising>
