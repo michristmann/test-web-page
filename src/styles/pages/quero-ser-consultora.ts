@@ -10,35 +10,61 @@ export const PageIntro = styled.div`
   flex-direction: column;
 
   width: 100%;
-  padding: 0 7.8rem;
-  margin-bottom: 6.8rem;
+  padding: 0 2.1rem;
+  margin-bottom: 1.6rem;
 
   align-items: center;
+  text-align: center;
 
   > h2 {
-    margin-bottom: 9.6rem;
+    font-size: 4rem;
+
+    margin-top: 1.2rem;
+    margin-bottom: 2.4rem;
   }
 
   > p {
     font: ${props => props.theme.fonts.p26};
+    font-size: 1.8rem;
 
     padding: 1.6rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0 7.8rem;
+    margin-bottom: 6.8rem;
+
+    text-align: unset;
+
+    > h2 {
+      font-size: 9rem;
+
+      margin-top: 0;
+      margin-bottom: 9.6rem;
+    }
+
+    > p {
+      font-size: 2.6rem;
+    }
   }
 `
 
 export const Prerequisites = styled.div`
   display: flex;
+  flex-direction: column;
 
   align-items: center;
   justify-content: space-between;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
 `
 
 export const Requisite = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 26rem;
-  height: 28rem;
   padding: 1.6rem;
 
   align-items: center;
@@ -51,9 +77,20 @@ export const Requisite = styled.div`
   }
 
   > h4 {
-    letter-spacing: 0.1rem;
+    font-size: 2rem;
+
     text-transform: uppercase;
     text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    width: 26rem;
+    height: 28rem;
+
+    > h4 {
+      font-size: 2.8rem;
+      letter-spacing: 0.1rem;
+    }
   }
 `
 
@@ -61,11 +98,15 @@ export const FormArea = styled.div`
   display: flex;
 
   width: 100%;
-  padding: 12.6rem 7.6rem;
+  padding: 4.2rem 2.1rem;
 
   align-items: center;
 
   background-color: ${props => props.theme.colors.secondaryBackground};
+
+  @media (min-width: 1024px) {
+    padding: 12.6rem 7.6rem;
+  }
 `
 
 export const FormWrapper = styled.div`
@@ -80,19 +121,29 @@ export const FormWrapper = styled.div`
 export const FormHeader = styled.div`
   text-align: center;
 
-  padding: 1.6rem;
-  padding-top: 0;
-
   > h2 {
-    width: 90%;
-
-    text-transform: uppercase;
+    font-size: 4rem;
 
     margin-bottom: 2.8rem;
+
+    text-transform: uppercase;
   }
 
   > p {
     font: ${props => props.theme.fonts.p16};
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1.6rem;
+    padding-top: 0;
+
+    > h2 {
+      width: 90%;
+
+      margin-bottom: 2.8rem;
+
+      font-size: 9rem;
+    }
   }
 `
 
@@ -162,14 +213,26 @@ export const Advertising = styled.div`
 
   text-align: start;
 
-  width: 100%;
-  padding: 12.6rem 7.6rem;
+  width: 100vw;
+  padding: 4.2rem 2.1rem;
+
+  @media (min-width: 1024px) {
+    padding: 12.6rem 7.6rem;
+  }
 `
 
 export const AdvertHeader = styled.div`
-  width: 65%;
+  width: 100%;
 
   margin-bottom: 6.8rem;
+
+  > h2 {
+    font-size: 4rem;
+  }
+
+  > h3 {
+    font-size: 2.8rem;
+  }
 
   > h2,
   h3 {
@@ -183,6 +246,18 @@ export const AdvertHeader = styled.div`
 
     line-height: 2.8rem;
   }
+
+  @media (min-width: 1024px) {
+    width: 65%;
+
+    > h2 {
+      font-size: 9rem;
+    }
+
+    > h3 {
+      font-size: 5.6em;
+    }
+  }
 `
 
 export const AdvertContent = styled.div`
@@ -190,19 +265,34 @@ export const AdvertContent = styled.div`
   position: relative;
 
   width: 100%;
-  height: 74rem;
+  height: 62rem;
 
-  margin-bottom: 6.8rem;
+  margin-bottom: 3.4rem;
 
   align-items: center;
+
+  @media (min-width: 1024px) {
+    height: 74rem;
+
+    margin-bottom: 6.8rem;
+  }
 `
 
 export const AdvertContentImg = styled.div`
   position: absolute;
+  top: 0;
 
   > img {
-    width: 105rem;
-    height: 71rem;
+    width: 90%;
+  }
+
+  @media (min-width: 1024px) {
+    top: unset;
+
+    > img {
+      width: 105rem;
+      height: 71rem;
+    }
   }
 `
 
@@ -211,16 +301,19 @@ export const AdvertContentText = styled.div`
 
   position: absolute;
 
-  width: 50%;
-  padding: 7.2rem 8.6rem;
+  width: 90%;
+  padding: 3rem;
 
   right: 0;
+  top: 15rem;
 
   background: ${props => props.theme.colors.tertiaryBackground};
   color: ${props => props.theme.colors.tertiary};
 
   > h2 {
     text-transform: uppercase;
+
+    font-size: 4rem;
 
     margin-bottom: 2.8rem;
   }
@@ -230,6 +323,17 @@ export const AdvertContentText = styled.div`
     color: ${props => props.theme.colors.tertiary};
 
     margin-bottom: 1.4rem;
+  }
+
+  @media (min-width: 1024px) {
+    width: 50%;
+    padding: 7.2rem 8.6rem;
+
+    top: unset;
+
+    > h2 {
+      font-size: 9rem;
+    }
   }
 `
 
@@ -242,15 +346,17 @@ export const AdvertFooter = styled.div`
   text-align: end;
 
   > h2,
-  h4,
-  p {
-    width: 55%;
-  }
-
-  > h2,
   h4 {
     text-transform: uppercase;
     margin-bottom: 2.8rem;
+  }
+
+  > h2 {
+    font-size: 4rem;
+  }
+
+  > h4 {
+    font-size: 1.8rem;
   }
 
   > p {
@@ -258,5 +364,21 @@ export const AdvertFooter = styled.div`
     color: ${props => props.theme.colors.primary};
 
     line-height: 2.8rem;
+  }
+
+  @media (min-width: 1024px) {
+    > h2,
+    h4,
+    p {
+      width: 55%;
+    }
+
+    > h2 {
+      font-size: 9rem;
+    }
+
+    > h4 {
+      font-size: 2.8rem;
+    }
   }
 `

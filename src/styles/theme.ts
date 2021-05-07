@@ -11,13 +11,13 @@ const theme = {
   },
 
   fonts: {
-    h2: '300 9.0em IBM Plex Sans, sans-serif',
-    h3: '300 5.6em IBM Plex Sans, sans-serif',
-    h4: '300 2.8em IBM Plex Sans, sans-serif',
-    a: '500 1.3em IBM Plex Sans, sans-serif',
-    p26: '400 2.6em IBM Plex Sans, sans-serif',
-    p16: '400 1.6em IBM Plex Sans, sans-serif',
-    span: '400 1.6em IBM Plex Sans, sans-serif'
+    h2: '300 9.0rem IBM Plex Sans, sans-serif',
+    h3: '300 5.6rem IBM Plex Sans, sans-serif',
+    h4: '300 2.8rem IBM Plex Sans, sans-serif',
+    a: '500 1.3rem IBM Plex Sans, sans-serif',
+    p26: '400 2.6rem IBM Plex Sans, sans-serif',
+    p16: '400 1.6rem IBM Plex Sans, sans-serif',
+    span: '400 1.6rem IBM Plex Sans, sans-serif'
   }
 }
 

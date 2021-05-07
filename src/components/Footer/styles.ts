@@ -4,9 +4,13 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 6.4rem 7.6rem;
+  padding: 2.1rem;
 
   width: 100vw;
+
+  @media (min-width: 1024px) {
+    padding: 6.4rem 7.6rem;
+  }
 `
 
 export const MediaLinks = styled.div`
@@ -30,21 +34,37 @@ export const MediaLinks = styled.div`
 
 export const CompanyLinks = styled.div`
   display: flex;
+  flex-direction: column;
 
-  margin-bottom: 6.8rem;
+  margin-bottom: 0.8rem;
 
   align-items: center;
   justify-content: space-around;
   text-align: center;
   text-decoration: underline;
 
+  > div {
+    margin-bottom: 2.4rem;
+  }
+
   a {
     font: ${props => props.theme.fonts.a};
     text-decoration: none;
     text-transform: uppercase;
+    font-size: 1.4rem;
 
     color: ${props => props.theme.colors.primary};
     margin-bottom: 0.4rem;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+
+    margin-bottom: 6.8rem;
+
+    > div {
+      margin-bottom: 0;
+    }
   }
 `
 
@@ -72,9 +92,11 @@ export const CompanyInfo = styled.div`
   display: flex;
   flex-direction: column;
 
-  padding: 1.6rem;
+  padding: 1.6rem 0;
 
   align-items: center;
+
+  text-align: center;
 
   div {
     margin-bottom: 1.6rem;
@@ -91,7 +113,22 @@ export const CompanyInfo = styled.div`
   }
 
   p {
+    width: 90%;
+
     font: ${props => props.theme.fonts.p16};
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+
+    line-height: 2.4rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1.6rem;
+
+    p {
+      width: unset;
+
+      font: ${props => props.theme.fonts.p16};
+      font-size: 1.2rem;
+    }
   }
 `

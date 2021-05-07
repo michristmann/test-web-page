@@ -85,7 +85,7 @@ const wantToBeConsultant: React.FC = () => {
         <title>Quero ser Consultora — H. Maria - Joias Contemporâneas</title>
       </Head>
 
-      <Header />
+      <Header isActive />
 
       <PageIntro>
         <h2>PRÉ-REQUISITOS</h2>
