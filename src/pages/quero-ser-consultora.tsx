@@ -12,6 +12,7 @@ import {
   Container,
   PageIntro,
   Prerequisites,
+  RequisiteWrapper,
   Requisite,
   FormArea,
   FormWrapper,
@@ -90,30 +91,35 @@ const wantToBeConsultant: React.FC = () => {
       <PageIntro>
         <h2>PRÉ-REQUISITOS</h2>
         <Prerequisites>
-          <Requisite>
-            <img src={minimumAge} alt="Idade Mínima" />
-            <h4>Ser maior de 18 anos</h4>
-          </Requisite>
-          <Requisite>
-            <img src={idCard} alt="Idade Mínima" />
-            <h4>Carteira de identidade</h4>
-          </Requisite>
-          <Requisite>
-            <img src={authentication} alt="Idade Mínima" />
-            <h4>Possuir CPF próprio</h4>
-          </Requisite>
-          <Requisite>
-            <img src={brSouthRegion} alt="Idade Mínima" />
-            <h4>Morar no RS ou SC</h4>
-          </Requisite>
-          <Requisite>
-            <img src={document} alt="Idade Mínima" />
-            <h4>Comprovante de residência</h4>
-          </Requisite>
-          <Requisite>
-            <img src={thumbsUp} alt="Idade Mínima" />
-            <h4>Estar livre de restrições cadastrais e financeiras</h4>
-          </Requisite>
+          <RequisiteWrapper>
+            <Requisite>
+              <img src={minimumAge} alt="Idade Mínima" />
+              <h4>Ser maior de 18 anos</h4>
+            </Requisite>
+            <Requisite>
+              <img src={idCard} alt="Idade Mínima" />
+              <h4>Carteira de identidade</h4>
+            </Requisite>
+            <Requisite>
+              <img src={authentication} alt="Idade Mínima" />
+              <h4>Possuir CPF próprio</h4>
+            </Requisite>
+          </RequisiteWrapper>
+
+          <RequisiteWrapper>
+            <Requisite>
+              <img src={brSouthRegion} alt="Idade Mínima" />
+              <h4>Morar no RS ou SC</h4>
+            </Requisite>
+            <Requisite>
+              <img src={document} alt="Idade Mínima" />
+              <h4>Comprovante de residência</h4>
+            </Requisite>
+            <Requisite>
+              <img src={thumbsUp} alt="Idade Mínima" />
+              <h4>Estar livre de restrições cadastrais e financeiras</h4>
+            </Requisite>
+          </RequisiteWrapper>
         </Prerequisites>
         <p>Tudo Ok? Agora é só preencher a sua solicitação!</p>
       </PageIntro>

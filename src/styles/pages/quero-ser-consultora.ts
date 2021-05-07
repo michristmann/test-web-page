@@ -56,6 +56,15 @@ export const Prerequisites = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  @media (min-width: 1680px) {
+    flex-direction: row;
+  }
+`
+
+export const RequisiteWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
   @media (min-width: 1024px) {
     flex-direction: row;
   }
@@ -276,6 +285,10 @@ export const AdvertContent = styled.div`
 
     margin-bottom: 6.8rem;
   }
+
+  @media (min-width: 1680px) {
+    height: 74rem;
+  }
 `
 
 export const AdvertContentImg = styled.div`
@@ -287,11 +300,16 @@ export const AdvertContentImg = styled.div`
   }
 
   @media (min-width: 1024px) {
+    > img {
+      width: 70%;
+    }
+  }
+
+  @media (min-width: 1680px) {
     top: unset;
 
     > img {
-      width: 105rem;
-      height: 71rem;
+      width: 90%;
     }
   }
 `
@@ -326,6 +344,17 @@ export const AdvertContentText = styled.div`
   }
 
   @media (min-width: 1024px) {
+    width: 70%;
+    padding: 3.6rem 4.3rem;
+
+    top: 30rem;
+
+    > h2 {
+      font-size: 6rem;
+    }
+  }
+
+  @media (min-width: 1400px) {
     width: 50%;
     padding: 7.2rem 8.6rem;
 

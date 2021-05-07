@@ -78,6 +78,7 @@ const Header: React.FC<HeaderProps> = () => {
               </Block>
             </NextLink>
           </PagesLinksWrapper>
+
           <PagesLinksWrapper>
             <NextLink href="/sobre">
               <Block onClick={() => setCurrentPage('sobre')}>
