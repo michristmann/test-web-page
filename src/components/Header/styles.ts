@@ -1,8 +1,30 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 interface DivProps {
   isActive: boolean
 }
+
+const textAppearFromBottom = keyframes`
+    from{
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+`
+
+const buttonAppearFromBottom = keyframes`
+    from{
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+`
 
 export const Container = styled.div`
   display: flex;
@@ -185,9 +207,9 @@ export const DropdownContent = styled.div<DivProps>`
       top: 0rem;
       left: 0;
       bottom: 0;
-      margin-top: 6rem;
+      margin-top: 8rem;
 
-      padding: 6rem 0;
+      padding: 3rem 0;
 
       align-items: center;
       text-align: center;
@@ -205,6 +227,8 @@ export const DropdownContent = styled.div<DivProps>`
         padding: 0.6rem 1.6rem;
 
         color: ${props => props.theme.colors.primary};
+
+        animation: ${textAppearFromBottom} 1s;
       }
 
       @media (min-width: 375px) {
@@ -228,6 +252,8 @@ export const RestrictedAreaDropdownButton = styled.button`
   border: 0.4rem solid ${props => props.theme.colors.primary};
 
   transition: background-color 1ms linear, color 1ms linear;
+
+  animation: ${buttonAppearFromBottom} 1s;
 
   p {
     font-size: 1.8rem;
